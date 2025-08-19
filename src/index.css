@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-blue: #1a2c3f;
+  --brand-red: #e62d3f;
+  --brand-neutral: #f5f5e9;
+  --brand-black: #000000;
+}
+
+.container-max {
+  @apply max-w-6xl mx-auto px-4;
+}
+
+.card {
+  @apply bg-white rounded-2xl shadow-soft p-6 border border-gray-100;
+}
+
+.btn {
+  @apply inline-flex items-center gap-2 rounded-2xl px-4 py-2 font-medium transition;
+}
+.btn-primary {
+  @apply btn bg-brand-blue text-white hover:opacity-90;
+}
+.btn-secondary {
+  @apply btn border border-brand-blue text-brand-blue bg-white hover:bg-brand-neutral;
+}
+
+.link {
+  @apply text-brand-blue underline underline-offset-4 hover:opacity-80;
+}
+.nav-link {
+  @apply px-3 py-2 rounded-2xl text-gray-700 hover:text-brand-blue hover:bg-brand-neutral transition;
+}
+.nav-link-active {
+  @apply bg-brand-neutral text-brand-blue font-medium;
+}
+
+/* offset universal para anclas: usa la altura real del header */
+.anchor-offset {
+  scroll-margin-top: calc(var(--header-h, 120px) + 12px);
+}
