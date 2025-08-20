@@ -2,10 +2,10 @@ export function OurBrand() {
   return (
     <section
       id="nuestra-marca"
-      className="bg-white scroll-mt-32 md:scroll-mt-36"
+      className="bg-white anchor-offset"
     >
       <div className="container-max py-12 md:py-16">
-        <h2 className="font-shantell text-brand-blue text-3xl md:text-4xl underline underline-offset-4 text-center">
+        <h2 className="font-shantell text-brand-blue text-3xl md:text-4xl underline underline-offset-4 items-start">
           NUESTRA MARCA:
         </h2>
 

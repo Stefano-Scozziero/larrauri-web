@@ -1,6 +1,6 @@
 // src/shell/AppShell.tsx
 import * as React from 'react'
-import { Link, Outlet, useLocation } from 'react-router-dom'
+import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import logo from '../assets/larrauri-logo.png'
 
 type Item = { id?: string; label: string }
@@ -14,39 +14,31 @@ const NAV: Item[] = [
 ]
 
 // Scroll automático cuando cambia la URL (incluye hash)
-// Usa scroll-margin-top (clase .anchor-offset) para compensar el header.
+// Mantiene compatibilidad con navegación programática (pushState abajo).
 function ScrollToHash() {
   const { pathname, hash } = useLocation()
-
   React.useEffect(() => {
     if (pathname !== '/') return
-    // si no hay hash, subo arriba
     if (!hash) {
       window.scrollTo({ top: 0, behavior: 'smooth' })
       return
     }
-
     let tries = 0
     const scroll = () => {
       const el = document.querySelector(hash) as HTMLElement | null
-      if (el) {
-        // la clase .anchor-offset hará el offset del header
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      } else if (tries < 16) {
-        tries += 1
-        requestAnimationFrame(scroll) // reintenta hasta que monte el Home
-      }
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      else if (tries < 16) { tries += 1; requestAnimationFrame(scroll) }
     }
     requestAnimationFrame(scroll)
   }, [pathname, hash])
-
   return null
 }
 
 export function AppShell() {
   const headerRef = React.useRef<HTMLDivElement>(null)
   const [headerH, setHeaderH] = React.useState(0)
-  const [active, setActive] = React.useState<string>('')
+  const [active, setActive] = React.useState<string>('inicio')
+  const navigate = useNavigate()
 
   // medir header y exponer --header-h para .anchor-offset
   React.useEffect(() => {
@@ -64,39 +56,92 @@ export function AppShell() {
     return () => { ro.disconnect(); window.removeEventListener('resize', setH) }
   }, [])
 
-  // Marcar activo con IntersectionObserver (solo cuando el Home está montado)
+  // === NUEVO: cálculo robusto del item activo basado en scroll ===
   React.useEffect(() => {
-    const ids = NAV.filter(n => n.id).map(n => n.id!)
-    const els = ids.map(id => document.getElementById(id)).filter((x): x is HTMLElement => !!x)
-    if (!els.length) return
-    const obs = new IntersectionObserver((entries) => {
-      let topMost: { id: string; top: number } | null = null
-      for (const e of entries) {
-        if (!e.isIntersecting) continue
-        const id = (e.target as HTMLElement).id
-        const top = e.boundingClientRect.top
-        if (!topMost || top < topMost.top) topMost = { id, top }
+    const ids = NAV.filter(n => n.id).map(n => n.id!) // solo secciones
+    if (!ids.length) return
+
+    const headerOffset = () => headerH + 12
+
+    let ticking = false
+    const updateActive = () => {
+      ticking = false
+      // Si estamos arriba del todo, "inicio"
+      if (window.scrollY <= 2) {
+        setActive('inicio')
+        return
       }
-      if (topMost) setActive(topMost.id)
-      if (window.scrollY < 10) setActive('inicio')
-    }, {
-      root: null,
-      rootMargin: `-${headerH + 12}px 0px -60% 0px`,
-      threshold: [0, 0.2, 0.4, 0.6, 0.8, 1],
-    })
-    els.forEach(el => obs.observe(el))
-    return () => obs.disconnect()
+
+      type T = { id: string; top: number }
+      const tops: T[] = []
+      for (const id of ids) {
+        const el = document.getElementById(id)
+        if (!el) continue
+        const top = el.getBoundingClientRect().top - headerOffset()
+        tops.push({ id, top })
+      }
+      if (!tops.length) return
+
+      // 1) Sección más abajo de la línea superior pero lo más cercana (top <= 0, el mayor)
+      const above = tops.filter(t => t.top <= 0).sort((a, b) => b.top - a.top)
+      if (above.length) {
+        setActive(above[0].id)
+        return
+      }
+      // 2) Si ninguna pasó la línea, tomamos la más cercana hacia abajo (top más chico positivo)
+      const below = tops.filter(t => t.top > 0).sort((a, b) => a.top - b.top)
+      setActive(below[0].id)
+    }
+
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true
+        requestAnimationFrame(updateActive)
+      }
+    }
+
+    // run al montar y en resize (por si cambia headerH)
+    updateActive()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+    }
   }, [headerH])
 
+  // Clases
   const linkClass = (id?: string) =>
     `nav-link ${ (id ? active === id : active === 'inicio') ? 'nav-link-active' : '' }`
+
+  // === NUEVO: navegación programática que SIEMPRE scrollea (aunque el hash no cambie) ===
+  const scrollToId = (id?: string) => {
+    if (!id) {
+      // Inicio
+      navigate('/', { replace: false })
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+      setActive('inicio')
+      return
+    }
+    const el = document.getElementById(id)
+    // actualizamos URL (incluso si es el mismo hash)
+    const url = `/#${id}`
+    if (location.hash !== `#${id}`) {
+      history.pushState(null, '', url)
+    } else {
+      // mismo hash → igual “forzamos” un history para re-trigger visual
+      history.replaceState(null, '', url)
+    }
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    setActive(id) // feedback inmediato
+  }
 
   return (
     <div className="min-h-screen flex flex-col ">
       <header ref={headerRef} className="sticky top-0 z-50 bg-[#1f2937] backdrop-blur ">
         <div className="container-max py-1">
           <div className="flex justify-center">
-            <Link to="/" className="inline-flex items-center gap-2" onClick={() => setActive('inicio')}>
+            <Link to="/" className="inline-flex items-center gap-2" onClick={(e) => { e.preventDefault(); scrollToId(undefined) }}>
               <img src={logo} alt="Larrauri" className="h-[140px] md:h-[140px] w-auto my-3" />
             </Link>
           </div>
@@ -104,13 +149,23 @@ export function AppShell() {
           <nav className="rounded-2xl mt-2 flex flex-wrap items-center justify-center gap-2 md:gap-2 bg-white/95">
             {NAV.map(item =>
               item.id ? (
-                <Link key={item.id} to={`/#${item.id}`} className={linkClass(item.id)}>
+                <a
+                  key={item.id}
+                  href={`/#${item.id}`}
+                  className={linkClass(item.id)}
+                  onClick={(e) => { e.preventDefault(); scrollToId(item.id) }}
+                >
                   {item.label}
-                </Link>
+                </a>
               ) : (
-                <Link key="inicio" to="/" className={linkClass(undefined)}>
+                <a
+                  key="inicio"
+                  href="/"
+                  className={linkClass(undefined)}
+                  onClick={(e) => { e.preventDefault(); scrollToId(undefined) }}
+                >
                   {item.label}
-                </Link>
+                </a>
               )
             )}
           </nav>
