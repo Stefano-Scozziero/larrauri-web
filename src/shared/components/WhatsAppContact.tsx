@@ -71,7 +71,7 @@ export function WhatsAppContact({ className = '', title = 'Contacto' }: Props) {
           </div>
 
           {/* Columna derecha: datos dentro de una “tarjeta” */}
-          <div className="rounded-xl bg-white/5 p-5 ring-1 ring-white/10 backdrop-blur">
+          <div className="rounded-xl bg-white/5 p-3 ring-1 ring-white/10 backdrop-blur">
             <address className="not-italic leading-relaxed">
               {CONTACT.address.map((line, i) => (
                 <p key={i}>{line}</p>
