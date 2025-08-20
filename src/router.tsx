@@ -20,13 +20,6 @@ export const router = createBrowserRouter([
           return { Component: mod.default }
         },
       },
-      {
-        path: 'contacto',
-        async lazy() {
-          const mod = await import('./features/contact/ContactPage')
-          return { Component: mod.default }
-        },
-      },
     ],
   },
 ])

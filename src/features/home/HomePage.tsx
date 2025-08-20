@@ -3,26 +3,13 @@ import { VideoHero } from '../../shared/components/VideoHero'
 import { WhyChooseUs } from '../../shared/components/WhyChooseUs'
 import { Section } from '../../shared/components/Section'
 import { Link } from 'react-router-dom'
-import { ContactForm } from '../../shared/components/ContactForm'
+import { WhatsAppContact } from '../../shared/components/WhatsAppContact'
+import { WhatsAppFAB } from '../../shared/components/WhatsAppFAB'
 
 export default function HomePage() {
   return (
     <>
       <VideoHero />
-
-      {/* Versión breve / claim corto */}
-      <section className="container-max py-8 md:py-10">
-        <div className="card text-center">
-          <h2 className="text-xl md:text-2xl font-serif text-brand-blue">
-            Más de 100 años produciendo carnes de excelencia
-          </h2>
-          <p className="mt-3 text-gray-700 max-w-3xl mx-auto">
-            Somos una empresa familiar que controla toda la cadena productiva: desde el engorde en nuestro feedlot
-            hasta la faena, procesamiento y distribución. Con capacidad para procesar más de 190.000 cabezas bovinas
-            al año y logística propia, garantizamos calidad, trazabilidad y entregas eficientes.
-          </p>
-        </div>
-      </section>
 
       {/* Quiénes somos */}
       <Section id="quienes-somos" title="Quiénes somos">
@@ -36,10 +23,6 @@ export default function HomePage() {
               Nuestra historia está marcada por el compromiso con la calidad, la innovación en los procesos productivos
               y una fuerte vocación de servicio hacia nuestros clientes.
             </p>
-          </div>
-          <div className="card">
-            <h3 className="text-brand-blue font-semibold">Eslogan</h3>
-            <p className="mt-2">“Larrauri: Carne Argentina de excelencia”.</p>
           </div>
         </div>
       </Section>
@@ -114,9 +97,11 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section id="contacto" title="Contacto">
-        <ContactForm />
+      <Section id="contacto" title=" ">
+        <WhatsAppContact />
       </Section>
+
+      {/* <WhatsAppFAB /> */}
     </>
   )
 }
