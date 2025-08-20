@@ -1,5 +1,6 @@
+// src/shell/AppShell.tsx
 import * as React from 'react'
-import { Outlet } from 'react-router-dom'   // ⬅️ vuelve a importar Outlet
+import { Link, Outlet, useLocation } from 'react-router-dom'
 import logo from '../assets/logo-finlar-login.png'
 
 type Item = { id?: string; label: string }
@@ -12,11 +13,42 @@ const NAV: Item[] = [
   { id: 'contacto', label: 'Contacto' },
 ]
 
+// Scroll automático cuando cambia la URL (incluye hash)
+// Usa scroll-margin-top (clase .anchor-offset) para compensar el header.
+function ScrollToHash() {
+  const { pathname, hash } = useLocation()
+
+  React.useEffect(() => {
+    if (pathname !== '/') return
+    // si no hay hash, subo arriba
+    if (!hash) {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+      return
+    }
+
+    let tries = 0
+    const scroll = () => {
+      const el = document.querySelector(hash) as HTMLElement | null
+      if (el) {
+        // la clase .anchor-offset hará el offset del header
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      } else if (tries < 16) {
+        tries += 1
+        requestAnimationFrame(scroll) // reintenta hasta que monte el Home
+      }
+    }
+    requestAnimationFrame(scroll)
+  }, [pathname, hash])
+
+  return null
+}
+
 export function AppShell() {
   const headerRef = React.useRef<HTMLDivElement>(null)
   const [headerH, setHeaderH] = React.useState(0)
   const [active, setActive] = React.useState<string>('')
 
+  // medir header y exponer --header-h para .anchor-offset
   React.useEffect(() => {
     const el = headerRef.current
     if (!el) return
@@ -32,22 +64,7 @@ export function AppShell() {
     return () => { ro.disconnect(); window.removeEventListener('resize', setH) }
   }, [])
 
-  const scrollToId = (id?: string) => (e: React.MouseEvent) => {
-    e.preventDefault()
-    if (!id) {
-      window.history.pushState(null, '', '/')
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-      setActive('inicio')
-      return
-    }
-    const el = document.getElementById(id)
-    if (!el) return
-    const y = window.scrollY + el.getBoundingClientRect().top - headerH - 12
-    window.history.pushState(null, '', `/#${id}`)
-    window.scrollTo({ top: y, behavior: 'smooth' })
-    setActive(id)
-  }
-
+  // Marcar activo con IntersectionObserver (solo cuando el Home está montado)
   React.useEffect(() => {
     const ids = NAV.filter(n => n.id).map(n => n.id!)
     const els = ids.map(id => document.getElementById(id)).filter((x): x is HTMLElement => !!x)
@@ -79,20 +96,23 @@ export function AppShell() {
       <header ref={headerRef} className="sticky top-0 z-50 border-b bg-white/95 backdrop-blur">
         <div className="container-max py-3">
           <div className="flex justify-center">
-            <a href="/" onClick={scrollToId(undefined)} className="inline-flex items-center gap-2">
+            {/* Inicio → a "/" (sin onClick custom) */}
+            <Link to="/" className="inline-flex items-center gap-2" onClick={() => setActive('inicio')}>
               <img src={logo} alt="Larrauri" className="h-[120px] md:h-[120px] w-auto" />
-            </a>
+            </Link>
           </div>
+
+          {/* Secciones del Home → "/#id" */}
           <nav className="mt-3 flex flex-wrap items-center justify-center gap-2 md:gap-3">
             {NAV.map(item =>
               item.id ? (
-                <a key={item.id} href={`/#${item.id}`} onClick={scrollToId(item.id)} className={linkClass(item.id)}>
+                <Link key={item.id} to={`/#${item.id}`} className={linkClass(item.id)}>
                   {item.label}
-                </a>
+                </Link>
               ) : (
-                <a key="inicio" href="/" onClick={scrollToId(undefined)} className={linkClass(undefined)}>
+                <Link key="inicio" to="/" className={linkClass(undefined)}>
                   {item.label}
-                </a>
+                </Link>
               )
             )}
           </nav>
@@ -100,7 +120,8 @@ export function AppShell() {
       </header>
 
       <main className="flex-1">
-        {/* ⬇️ acá vuelve el contenido de las rutas hijas */}
+        {/* Se encarga de scrollear cuando estás en "/" y cambia el hash */}
+        <ScrollToHash />
         <React.Suspense fallback={null}>
           <Outlet />
         </React.Suspense>
