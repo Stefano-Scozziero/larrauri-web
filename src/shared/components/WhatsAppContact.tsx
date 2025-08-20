@@ -24,7 +24,7 @@ export function WhatsAppContact({ className = '', title = 'Contacto' }: Props) {
         className="pointer-events-none absolute inset-0 opacity-30"
         style={{
           background:
-            'radial-gradient(1200px 400px at 50% -10%, rgba(255,255,255,.12), transparent 60%)',
+            'radial-gradient(1200px 400px at 50% -10%, rgba(255, 255, 255, 0.12), transparent 60%)',
         }}
       />
 
