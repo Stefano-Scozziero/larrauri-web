@@ -3,6 +3,7 @@ import { VideoHero } from '../../shared/components/VideoHero'
 import { WhyChooseUs } from '../../shared/components/WhyChooseUs'
 import { Section } from '../../shared/components/Section'
 import { Link } from 'react-router-dom'
+import { ContactForm } from '../../shared/components/ContactForm'
 
 export default function HomePage() {
   return (
@@ -25,7 +26,7 @@ export default function HomePage() {
 
       {/* Quiénes somos */}
       <Section id="quienes-somos" title="Quiénes somos">
-        <div id="quienes-somos" className="grid md:grid-cols-2 gap-6 items-start scroll-mt-32 md:scroll-mt-36">
+        <div className="grid md:grid-cols-2 gap-6 items-start scroll-mt-32 md:scroll-mt-36">
           <div className="card">
             <p className="text-gray-700">
               Somos una empresa familiar con más de 100 años de trayectoria en la actividad de la carne, dedicada
@@ -45,7 +46,7 @@ export default function HomePage() {
 
       {/* Cadena de valor */}
      <Section id="cadena-de-valor" title="Cadena de valor">
-        <div id="cadena-de-valor" className="grid md:grid-cols-3 gap-6 scroll-mt-32 md:scroll-mt-36">
+        <div className="grid md:grid-cols-3 gap-6 scroll-mt-32 md:scroll-mt-36">
           <article className="card">
             <h3 className="text-brand-blue font-semibold">Engorde</h3>
             <p className="mt-2 text-gray-700">
@@ -72,12 +73,10 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Por qué elegirnos */}
       <WhyChooseUs />
 
-      {/* Productos */}
       <Section id="productos" title="Nuestros productos">
-        <div id="productos" className="grid md:grid-cols-2 gap-6 items-center scroll-mt-32 md:scroll-mt-36">
+        <div className="grid md:grid-cols-2 gap-6 items-center scroll-mt-32 md:scroll-mt-36">
           <div className="card">
             <p className="text-gray-700">
               Ofrecemos medias reses y cortes bovinos de primera calidad, obtenidos de animales criados bajo estrictos
@@ -88,7 +87,7 @@ export default function HomePage() {
               y cueros salados. Próximamente incorporaremos grasa bovina para la industria alimentaria y cosmética.
             </p>
             <div className="mt-4">
-              <Link to="/producto" className="btn-primary">Ver portafolio</Link>
+              <Link to="/producto" className="btn-primary">Ver productos</Link>
             </div>
           </div>
           <div className="card">
@@ -104,7 +103,6 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Impacto ambiental */}
       <Section title="Impacto ambiental">
         <div className="card" id="impacto-ambiental">
           <p className="text-gray-700">
@@ -116,16 +114,8 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Contacto (te lleva al formulario completo de /contacto) */}
       <Section id="contacto" title="Contacto">
-        <div id="contacto" className="card text-center scroll-mt-32 md:scroll-mt-36">
-          <p className="text-gray-700">
-            ¿Querés iniciar una relación comercial o tenés consultas específicas?
-          </p>
-          <div className="mt-4">
-            <Link to="/contacto" className="btn-primary">Ir al formulario</Link>
-          </div>
-        </div>
+        <ContactForm />
       </Section>
     </>
   )

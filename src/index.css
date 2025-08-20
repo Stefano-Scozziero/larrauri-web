@@ -41,3 +41,14 @@
 .anchor-offset {
   scroll-margin-top: calc(var(--header-h, 120px) + 12px);
 }
+
+svg .corte {
+  fill: #1f2937;            /* gris oscuro */
+  opacity: .12;             /* base apagada */
+  transition: fill 120ms ease, opacity 120ms ease, stroke 120ms ease;
+  cursor: pointer;
+}
+svg .corte:hover { opacity: .35; }
+svg .corte.active { fill: #e62d3f; opacity: .7; }     /* seleccionado */
+svg .corte.hover { opacity: .5; }                     /* hover desde la lista */
+svg text { pointer-events: none; user-select: none; }  /* que los números no capten clics */

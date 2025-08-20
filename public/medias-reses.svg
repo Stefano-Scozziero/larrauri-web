@@ -1,0 +1,348 @@
+<svg version="1.1" id="Cortes" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 665 665" style="enable-background:new 0 0 565 489;" xml:space="preserve">
+<style type="text/css">
+	.st0 {
+        fill: #FFF;
+    }
+
+    .st1 {
+        fill: #000;
+    }
+
+    .st2 {
+        font-family: 'TitilliumWeb-Regular';
+    }
+
+    .st3 {
+        font-size: 17px;
+    }
+
+    .st4 {
+        fill: none;
+        stroke: #000;
+        stroke-width: 3;
+        stroke-miterlimit: 10;
+    }
+
+    .st5 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+    }
+
+    .st6 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-dasharray: 3.0668, 3.0668;
+    }
+
+    .st7 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-dasharray: 2.9638, 2.9638;
+    }
+
+    .st8 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-dasharray: 3.0271, 3.0271;
+    }
+
+    .st9 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-dasharray: 2.9932, 2.9932;
+    }
+
+    .st10 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-dasharray: 3.0778, 3.0778;
+    }
+
+    .st11 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-dasharray: 2.8272, 2.8272;
+    }
+
+    .st12 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-dasharray: 2.9269, 2.9269;
+    }
+
+    .st13 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-dasharray: 2.9611, 2.9611;
+    }
+
+    .st14 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-dasharray: 2.9473, 2.9473;
+    }
+
+    .st15 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-dasharray: 3.0188, 3.0188;
+    }
+
+    .st16 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-dasharray: 3.3925, 3.3925;
+    }
+
+    .st17 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-dasharray: 2.6056, 2.6056;
+    }
+
+    .st18 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-dasharray: 2.9433, 2.9433;
+    }
+
+    .st19 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-dasharray: 3, 3;
+    }
+
+    .corte {
+        opacity: 0.16;
+        fill: #000;
+    }
+</style>
+<rect class="st0" width="665" height="589"></rect>
+
+ <text transform="matrix(1 0 0 1 483.4805 178)" class="st1 st2 st3">01</text>
+ 
+<text transform="matrix(1 0 0 1 221.4805 111)" class="st1 st2 st3">02</text>
+
+<text transform="matrix(1 0 0 1 179.4805 191)" class="st1 st2 st3">03</text>
+
+<text transform="matrix(1 0 0 1 177.4805 139)" class="st1 st2 st3">04</text>
+
+<text transform="matrix(1 0 0 1 166.4805 50)" class="st1 st2 st3">05</text>
+
+<text transform="matrix(1 0 0 1 494.4805 123)" class="st1 st2 st3">06</text>
+
+<text transform="matrix(1 0 0 1 204.4805 491)" class="st1 st2 st3">07</text>
+
+<text transform="matrix(1 0 0 1 504.4805 552)" class="st1 st2 st3">08</text>
+
+<text transform="matrix(1 0 0 1 528.4805 495)" class="st1 st2 st3">09</text>
+
+<text transform="matrix(1 0 0 1 430.4805 527)" class="st1 st2 st3">10</text>
+
+<text transform="matrix(1 0 0 1 262.4805 465)" class="st1 st2 st3">11</text>
+
+<text transform="matrix(1 0 0 1 245.4805 297)" class="st1 st2 st3">12</text>
+
+<text transform="matrix(1 0 0 1 258.4805 393)" class="st1 st2 st3">13</text>
+
+<text transform="matrix(1 0 0 1 239.4805 196)" class="st1 st2 st3">14</text>
+
+<text transform="matrix(1 0 0 1 480.4805 393)" class="st1 st2 st3">15</text>
+
+<g>
+	<path class="st4" d="M159,82c0,0-1-30-6-42l-4-16c0,0-2-7,5-7c0,0,10-1,11-8c0,0,11-6,31,16c0,0,11,14,18,30c0,0,23,18,37,36
+		c0,0,15,16,19,25c0,0-1,5,0,12l10,20c0,0,3,2,4,17c0,0,3,15,13,13l-13,40c0,0-4,15-10,24l-4,10l-1,31c0,0,10,35,11,45s6,31,6,31
+		s5,47,5,65v42l1,2l1,25l-9,16l17,26c0,0,6,6,0,13c0,0-33,28-62,25s-52-25-52-25l-25-10l-37,22l-15,15c0,0-12,4-16,0c0,0-5-5-3-9
+		c0,0-3-3-2-7s11.5-10.5,11.5-10.5l27-45c0,0,0-12-5-23s-3-68-3-68s-1-37,4-47s20-65,20-65l10-35l4-73l3-47v-18c0,0-4-19-4-27
+		C156.5,100.5,155.5,85.5,159,82z"></path>
+
+<g>
+		<g>
+			<line class="st5" x1="159.5" y1="82.5" x2="160.8" y2="81.8"></line>
+            <line class="st6" x1="163.6" y1="80.5" x2="211.8" y2="56.8"></line>
+            <line class="st5" x1="213.2" y1="56.2" x2="214.5" y2="55.5"></line>
+		</g>
+	</g>
+
+<g>
+		<g>
+			<path class="st5" d="M165.5,79.5c0,0,0.1,0.5,0.4,1.4"></path>
+            <path class="st7" d="M167,83.7c2,4.7,5.9,11.8,12.5,13.8c10,3,32,21,32,21s7,29,5,45l-7,9c0,0-15,4-30-8l-16.9-16.9"></path>
+            <line class="st5" x1="161.6" y1="146.6" x2="160.5" y2="145.5"></line>
+		</g>
+	</g>
+
+ <g>
+		<g>
+			<path class="st5" d="M279.5,147.5c0,0-0.4,0.3-1.3,0.8"></path>
+            <path class="st8" d="M275.6,149.8c-9.4,5.4-34.4,18.1-56.2,14.3"></path>
+            <path class="st5" d="M218,163.8c-0.5-0.1-1-0.2-1.5-0.3"></path>
+		</g>
+	</g>
+
+ <g>
+		<g>
+			<path class="st5" d="M164.5,149.5c0,0-0.1,0.5-0.3,1.5"></path>
+            <path class="st9" d="M163.8,153.9c-1.1,8.9-2.2,29.6,7.7,45.6c0,0,34,19,43,20c0,0,15,11,19,18s7,79,7,79l7,54c0,0,1.7,24.5,2,37
+				"></path>
+            <path class="st5" d="M249.5,409c0,0.5,0,1,0,1.5l1.4,0.5"></path>
+            <line class="st10" x1="253.9" y1="411.9" x2="287.6" y2="422.6"></line>
+            <line class="st5" x1="289.1" y1="423" x2="290.5" y2="423.5"></line>
+		</g>
+	</g>
+
+ <g>
+		<g>
+			<line class="st5" x1="245.5" y1="358.5" x2="247" y2="358.4"></line>
+            <line class="st11" x1="249.8" y1="358.1" x2="282.2" y2="355.4"></line>
+            <line class="st5" x1="283.6" y1="355.3" x2="285.1" y2="355.2"></line>
+		</g>
+	</g>
+
+<g>
+		<g>
+			<path class="st5" d="M214.5,219.5c0,0,0.5-0.1,1.5-0.2"></path>
+            <path class="st12" d="M218.9,219c11.8-1.2,43.4-4.5,46.6-4.5c0,0,7.3,0.8,15.4,4.6"></path>
+            <path class="st5" d="M282.2,219.8c0.4,0.2,0.9,0.5,1.3,0.7"></path>
+		</g>
+	</g>
+
+<g>
+		<g>
+			<line class="st5" x1="209.5" y1="173" x2="209.5" y2="174.5"></line>
+            <path class="st13" d="M209.5,177.5v2c0,0-3,15,0,22l4.2,15.1"></path>
+            <line class="st5" x1="214.1" y1="218.1" x2="214.5" y2="219.5"></line>
+		</g>
+	</g>
+
+<g>
+		<g>
+			<path class="st5" d="M265.5,437.5c0,0-0.5-0.2-1.4-0.4"></path>
+            <path class="st14" d="M261.2,436.5c-6.5-1.2-19.4-2.4-30.7,4c0,0-28,27-34,30c0,0-23,14-31,14c0,0-16,3-14,18
+				c1.5,11.3,12.7,16.4,18.1,18.2"></path>
+            <path class="st5" d="M171.1,521.1c0.9,0.3,1.4,0.4,1.4,0.4s0.2,0.5,0.6,1.4"></path>
+            <path class="st15" d="M174.6,525.5c2.6,4.1,7.9,9.6,16.9,9c0,0,15,8,32-13l25-33l16-48.1"></path>
+            <path class="st5" d="M265,438.9l0.5-1.4c0,0,0.6,0,1.5,0.1"></path>
+            <path class="st16" d="M270.4,437.8c5.3,0.4,13.7,1.4,18.4,3.1"></path>
+            <path class="st5" d="M290.3,441.6c0.5,0.3,0.9,0.6,1.2,0.9"></path>
+		</g>
+	</g>
+
+<g>
+		<g>
+			<line class="st5" x1="240.5" y1="499.5" x2="241.7" y2="500.3"></line>
+            <line class="st17" x1="243.9" y1="501.8" x2="247.2" y2="503.9"></line>
+            <path class="st5" d="M248.3,504.7l1.2,0.8c0,0,0.5-0.2,1.4-0.6"></path>
+            <path class="st18" d="M253.4,503.4c4.6-3,12.6-9.9,21.1-24.9c0,0,6.1-10.8,13-12.7"></path>
+            <path class="st5" d="M289,465.5c0.5,0,1,0,1.5,0"></path>
+		</g>
+	</g>
+</g>
+
+<path class="st4" d="M450.5,82.5c0,0-8.5-29.5-13.5-41.5l-4-16c0,0-2-7,5-7c0,0,10-1,11-8c0,0,11-6,31,16c0,0,12.5,22.5,14.5,46.5
+	c0,0,16,14,30,32c0,0,15,9,19,18c0,0,12,11,17,19l3.5,7.5c0,0,3,2,4,17c0,0,3,15,13,13l-13,40c0,0-4,15-10,24l-4,10l-1,31
+	c0,0,10,35,11,45s6,31,6,31s5,47,5,65v42l1,2l1,25l-9,16l17,26c0,0,6,6,0,13c0,0-33,28-62,25s-52-25-52-25l-25-10l-37,22l-15,15
+	c0,0-12,4-16,0c0,0-5-5-3-9c0,0-3-3-2-7s11.5-10.5,11.5-10.5l27-45c0,0,0-12-5-23s-3-68-3-68s-1-37,4-47s20-65,20-65l10-35l10-72
+	l8-48l1-19c0,0-4-17-4-25C452.5,102.5,450.5,90.5,450.5,82.5z"></path>
+
+<path class="st19" d="M411.5,498.5c0,0,145,8,157,12"></path>
+
+<polyline class="st19" points="489.5,502.5 495.5,511.5 473.5,551.5 "></polyline>
+
+<path class="st19" d="M499.5,505.5c0,0,5,6,8,14l60,41"></path>
+
+<path class="st19" d="M388.5,542.5c0,0,11,12,25,15"></path>
+
+<path class="st19" d="M450.5,302.5c0,0,62-11,90,11l2,57l-6,11l-4,26l-22,58c0,0-7,27-7,39"></path>
+
+<line class="st19" x1="510.5" y1="468.5" x2="574.5" y2="482.5"></line>
+
+<path class="st19" d="M450.6,302.8l2.9,197.7c-5-2,0,0,0,0"></path>
+
+<path class="st19" d="M475.5,202.5l-17-26c0,0-8-23,2-27c0,0,15-12,30-13c0,0,15-3,32,17l14,16c0,0,5,10-5,11l-12,5l-14,24l-7,7
+	c0,0-9,6-15,0S475.5,202.5,475.5,202.5z"></path>
+
+<path class="st19" d="M488.5,133.5c0,0-9-15-4-28l6-14c0,0,1-5,16,2c0,0,16,8,18,24c0,0,0,17-7,21l-7.8,3.5"></path>
+
+<a onclick="wenceslao_siveo('fotoc15');" href="#miscortes">
+	<path id="C15" class="corte" d="M454,498l-3-194c0,0,60-15,87,9c0,0,7,38,5,57l-7,14c0,0-6,42-18,57l-7,27l-9,37L454,498z" style="opacity: 0;"></path>
+	</a>
+
+<a onclick="wenceslao_siveo('fotoc14');" href="#miscortes">
+	<path id="C14" class="corte" d="M217,165c0,0,22,3,46-9l16-8c0,0,3,7,4,12c0,0-1,11,5,13c0,0,3,5,6,5h3l-14,43c0,0-12-5-15-6l-34,3
+	l-19,2c0,0-8-16-7-27v-20L217,165z" style="opacity: 0;"></path>
+</a>
+
+<a onclick="wenceslao_siveo('fotoc13');" href="#miscortes">
+	<path id="C13" class="corte" d="M246,358l39-3l6,68c0,0-41-14-41-13S246,358,246,358z" style="opacity: 0;"></path>
+</a>
+
+<a onclick="wenceslao_siveo('fotoc12');" href="#miscortes">
+	<path id="C12" class="corte" d="M214,220c0,0,42-5,48.5-5s20.5,6,20.5,6l-11,26l-4,36l17,72l-40,3l-8-80v-32C237,246,228,223,214,220
+	z" style="opacity: 0;"></path>
+</a>
+
+<a onclick="wenceslao_siveo('fotoc11');" href="#miscortes">
+	<path id="C11" class="corte" d="M287,440l-21-2c0,0-20,57-24,62.5l8,5.5c0,0,11-8,20-21s13-15,15-17s6-3,6-3v-23L287,440z" style="opacity: 0;"></path>
+</a>
+
+ <a onclick="wenceslao_siveo('fotoc10');" href="#miscortes">
+	<path id="C10" class="corte" d="M411,560c-1-3-23-18-23-18l25-40l-2-4l79,6l5,6c0,0-20,43-22,41s-29-12-29-12L411,560z" style="opacity: 0;"></path>
+</a>
+
+<a onclick="wenceslao_siveo('fotoc09');" href="#miscortes">
+	<path id="C09" class="corte" d="M510,468c1,0,64,14,64,14l3,11c0,0-9,17-11,17s-64-5-64-5L510,468z" style="opacity: 0;"></path>
+</a>
+
+ <a onclick="wenceslao_siveo('fotoc08');" href="#miscortes">
+	<path id="C08" class="corte" d="M567,560l-60-41l-5-14l-12-1l5,6l-22,41c0,0,27,21,37,21c0,0,22,0,28,0L567,560z" style="opacity: 0;"></path>
+</a>
+
+<a onclick="wenceslao_siveo('fotoc07');" href="#miscortes">
+	<path id="C07" class="corte" d="M266,438c0,0-34-11-55,21c0,0-25,23-40,24c0,0-20,1-20,20s22,19,22,19s4,8,9,10l14,4c0,0,9,2,16-4
+	s32-37,32-37l11-26L266,438z" style="opacity: 0;"></path>
+</a>
+
+<a onclick="wenceslao_siveo('fotoc06');" href="#miscortes">
+	<path id="C06" class="corte" d="M491,133c0,0-9-10-5-22c0,0,4-20,6-20c0,0,12-1,23,11c0,0,13,11,7,26c0,0-4,12-11,12L491,133z" style="opacity: 0;"></path>
+</a>
+
+<a onclick="wenceslao_siveo('fotoc05');" href="#miscortes">
+	<path id="C05" class="corte" d="M159,82l55-27l-21-33c0,0-16-15-24-13l-12,7l-6,2l-2,4l11,47L159,82z" style="opacity: 0;"></path>
+</a>
+
+<a onclick="wenceslao_siveo('fotoc04');" href="#miscortes">
+<path id="C04" class="corte" d="M159,82c0,0-4,9-2,24l3,42l16,13c0,0,12,16,27,12c0,0,14,0,14-21l-6-33l-29-20c0,0-11-6-12-9
+	s-4-10-4-10L159,82z" style="opacity: 0;"></path>
+</a>
+
+<a onclick="wenceslao_siveo('fotoc03');" href="#miscortes">
+	<path id="C03" class="corte" d="M164,150c0,0,16,17,19,18c0,0,16,8,25,5c0,0-0.7,22.5,0.2,25.8L214,220l-31-15l-12-5c0,0-8-16-8-26
+	S164,150,164,150z" style="opacity: 0;"></path>
+</a>
+
+<a onclick="wenceslao_siveo('fotoc02');" href="#miscortes">
+	<path id="C02" class="corte" d="M163,79l51-24c0,0,36,36,41,41l15,19c0,0-2,11,0,14l9,18c0,0-19,13-26,13c0,0-26,8-36,5
+	c0,0,0.5-32.5-5.5-43.5c0,0-16-16-24-20c0,0-12-4-17-12L163,79z" style="opacity: 0;"></path>
+</a>
+
+<a onclick="wenceslao_siveo('fotoc01');" href="#miscortes">
+	<path id="C01" class="corte" d="M475.5,202.5l-17-26c0,0-8-23,2-27c0,0,15-12,30-13c0,0,15-3,32,17l14,16c0,0,5,10-5,11l-12,5l-14,24
+	l-7,7c0,0-9,6-15,0S478.5,202.5,478.5,202.5z" style="opacity: 0;"></path>
+</a>
+</svg>
