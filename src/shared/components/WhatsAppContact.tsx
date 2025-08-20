@@ -16,7 +16,7 @@ export function WhatsAppContact({ className = '', title = 'Contacto' }: Props) {
   return (
     <section
       aria-labelledby="whatsapp-contact-title"
-      className={`relative overflow-hidden rounded-2xl bg-black text-white p-8 md:p-10 ${className}`}
+      className={`relative overflow-hidden rounded-2xl bg-[#1f2937] text-white p-8 md:p-10 ${className}`}
     >
       {/* fondo sutil */}
       <div

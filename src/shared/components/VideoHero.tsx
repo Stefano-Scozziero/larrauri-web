@@ -4,7 +4,7 @@ export function VideoHero() {
       <div className="relative h-[50vh] md:h-[75vh]">
         <video
           className="absolute inset-0 w-full h-full object-cover"
-          src="/bovinos2.mp4"
+          src="/bovinos.mp4"
           poster="/bovinos.png"
           autoPlay
           muted
