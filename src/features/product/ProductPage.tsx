@@ -5,7 +5,7 @@ import { CutsList } from './CutsList'
 import { CutsMapSvg } from './CutsMapSvg'
 
 export default function ProductPage() {
-  const [selectedId, setSelectedId] = React.useState(CUTS[0].id) // "01"
+  const [selectedId, setSelectedId] = React.useState<string | null>(null)
   const [hoveredId, setHoveredId] = React.useState<string | null>(null)
 
   return (
@@ -15,7 +15,7 @@ export default function ProductPage() {
           cuts={CUTS}
           selectedId={selectedId}
           onSelect={setSelectedId}
-          onHover={setHoveredId}     // ⬅️ resalta en el mapa
+          onHover={setHoveredId}
         />
         <CutsMapSvg
           cuts={CUTS}

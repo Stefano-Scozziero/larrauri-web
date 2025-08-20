@@ -3,25 +3,31 @@ import type { Cut } from './cuts.data'
 
 type Props = {
   cuts: Cut[]
-  selectedId: string
-  onSelect: (id: string) => void
-  onHover?: (id: string | null) => void   // ⬅️ nuevo
+  selectedId: string | null                 // ⬅️ ahora puede ser null
+  onSelect: (id: string | null) => void     // ⬅️ idem
+  onHover?: (id: string | null) => void
 }
 
 export function CutsList({ cuts, selectedId, onSelect, onHover }: Props) {
   const refs = React.useRef<Record<string, HTMLDivElement | null>>({})
 
   React.useEffect(() => {
-    const el = refs.current[selectedId]
+    const el = selectedId ? refs.current[selectedId] : null
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
   }, [selectedId])
 
   React.useEffect(() => {
     const handler = (e: KeyboardEvent) => {
-      const idx = cuts.findIndex(c => c.id === selectedId)
-      if (idx === -1) return
-      if (e.key === 'ArrowDown') onSelect((cuts[idx + 1] ?? cuts[0]).id)
-      else if (e.key === 'ArrowUp') onSelect((cuts[idx - 1] ?? cuts[cuts.length - 1]).id)
+      const idx = selectedId ? cuts.findIndex(c => c.id === selectedId) : -1
+      if (e.key === 'ArrowDown') {
+        if (idx === -1) onSelect(cuts[0].id)
+        else onSelect((cuts[idx + 1] ?? cuts[0]).id)
+      } else if (e.key === 'ArrowUp') {
+        if (idx === -1) onSelect(cuts[cuts.length - 1].id)
+        else onSelect((cuts[idx - 1] ?? cuts[cuts.length - 1]).id)
+      } else if (e.key === 'Escape') {
+        onSelect(null) // opcional, para cerrar con Esc
+      }
     }
     window.addEventListener('keydown', handler)
     return () => window.removeEventListener('keydown', handler)
@@ -32,6 +38,7 @@ export function CutsList({ cuts, selectedId, onSelect, onHover }: Props) {
       <div className="max-h-[520px] overflow-auto pr-1">
         {cuts.map((c, i) => {
           const open = c.id === selectedId
+          const panelId = `cut-panel-${c.id}`
           return (
             <div
               key={c.id}
@@ -41,8 +48,10 @@ export function CutsList({ cuts, selectedId, onSelect, onHover }: Props) {
               onMouseLeave={() => onHover?.(null)}
             >
               <button
-                onClick={() => onSelect(c.id)}
+                onClick={() => onSelect(open ? null : c.id)}
                 className="w-full text-left px-4 py-3 bg-white hover:bg-brand-neutral/60 flex items-center justify-between"
+                aria-expanded={open}
+                aria-controls={panelId}
               >
                 <span className="font-medium text-brand-blue">
                   {String(i + 1).padStart(2, '0')}. {c.name}
@@ -51,7 +60,7 @@ export function CutsList({ cuts, selectedId, onSelect, onHover }: Props) {
               </button>
 
               {open && (
-                <div className="px-4 pb-4 bg-brand-neutral/20">
+                <div id={panelId} className="px-4 pb-4 bg-brand-neutral/20">
                   <div className="grid md:grid-cols-2 gap-4">
                     <img
                       src={c.img}
