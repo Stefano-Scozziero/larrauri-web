@@ -1,3 +1,4 @@
+// tailwind.config.ts
 import type { Config } from 'tailwindcss'
 
 export default {
@@ -14,7 +15,10 @@ export default {
       },
       fontFamily: {
         serif: ['ui-serif', 'serif'],
-        sans: ['ui-sans-serif', 'system-ui', 'sans-serif']
+        sans: ['ui-sans-serif', 'system-ui', 'sans-serif'],
+        pacifico: ['"Pacifico"', 'cursive'],
+        architects: ['"Architects Daughter"', 'cursive'],
+        shantell: ['"Shantell Sans"', 'cursive'],
       },
       borderRadius: {
         '2xl': '1rem'

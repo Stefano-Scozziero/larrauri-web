@@ -1,6 +1,6 @@
 // src/features/home/HomePage.tsx
 import { VideoHero } from '../../shared/components/VideoHero'
-import { WhyChooseUs } from '../../shared/components/WhyChooseUs'
+import { OurBrand } from '../../shared/components/OurBrand'
 import { Section } from '../../shared/components/Section'
 import { Link } from 'react-router-dom'
 import { WhatsAppContact } from '../../shared/components/WhatsAppContact'
@@ -26,7 +26,7 @@ export default function HomePage() {
           </div>
         </div>
       </Section>
-
+      <OurBrand />
       {/* Cadena de valor */}
      <Section id="cadena-de-valor" title="Cadena de valor">
         <div className="grid md:grid-cols-3 gap-6 scroll-mt-32 md:scroll-mt-36">
@@ -56,7 +56,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <WhyChooseUs />
+      
 
       <Section id="productos" title="Nuestros productos">
         <div className="grid md:grid-cols-2 gap-6 items-center scroll-mt-32 md:scroll-mt-36">

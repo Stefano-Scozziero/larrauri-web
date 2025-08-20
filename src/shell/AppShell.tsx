@@ -1,14 +1,14 @@
 // src/shell/AppShell.tsx
 import * as React from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
-import logo from '../assets/logo-finlar-login.png'
+import logo from '../assets/larrauri-logo.png'
 
 type Item = { id?: string; label: string }
 const NAV: Item[] = [
   { label: 'Inicio' },
   { id: 'quienes-somos', label: 'Quiénes somos' },
+  { id: 'nuestra-marca', label: 'Nuestra Marca' },
   { id: 'cadena-de-valor', label: 'Cadena de valor' },
-  { id: 'por-que-elegirnos', label: 'Por qué elegirnos' },
   { id: 'productos', label: 'Productos' },
   { id: 'contacto', label: 'Contacto' },
 ]
@@ -92,18 +92,16 @@ export function AppShell() {
     `nav-link ${ (id ? active === id : active === 'inicio') ? 'nav-link-active' : '' }`
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <header ref={headerRef} className="sticky top-0 z-50 border-b bg-white/95 backdrop-blur">
-        <div className="container-max py-3">
+    <div className="min-h-screen flex flex-col ">
+      <header ref={headerRef} className="sticky top-0 z-50 bg-[#1f2937] backdrop-blur ">
+        <div className="container-max py-1">
           <div className="flex justify-center">
-            {/* Inicio → a "/" (sin onClick custom) */}
             <Link to="/" className="inline-flex items-center gap-2" onClick={() => setActive('inicio')}>
-              <img src={logo} alt="Larrauri" className="h-[120px] md:h-[120px] w-auto" />
+              <img src={logo} alt="Larrauri" className="h-[140px] md:h-[140px] w-auto my-3" />
             </Link>
           </div>
 
-          {/* Secciones del Home → "/#id" */}
-          <nav className="mt-3 flex flex-wrap items-center justify-center gap-2 md:gap-3">
+          <nav className="rounded-2xl mt-2 flex flex-wrap items-center justify-center gap-2 md:gap-2 bg-white/95">
             {NAV.map(item =>
               item.id ? (
                 <Link key={item.id} to={`/#${item.id}`} className={linkClass(item.id)}>
@@ -120,7 +118,6 @@ export function AppShell() {
       </header>
 
       <main className="flex-1">
-        {/* Se encarga de scrollear cuando estás en "/" y cambia el hash */}
         <ScrollToHash />
         <React.Suspense fallback={null}>
           <Outlet />
