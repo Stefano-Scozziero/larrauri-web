@@ -1,7 +1,7 @@
 // src/shell/AppShell.tsx
 import * as React from 'react'
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom'
-import logo from '../assets/larrauri-logo.png'
+import logo from '../assets/logo_larrauri.png'
 
 type Item = { id?: string; label: string }
 const NAV: Item[] = [

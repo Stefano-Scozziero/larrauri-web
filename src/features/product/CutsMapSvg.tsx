@@ -3,9 +3,9 @@ import type { Cut } from './cuts.data'
 
 type Props = {
   cuts: Cut[]
-  selectedId: string            // "01".."15"
-  onSelect: (id: string) => void
-  hoveredId?: string | null     // opcional: para resaltar desde la lista
+  selectedId: string | null
+  onSelect: (id: string | null) => void
+  hoveredId?: string | null
 }
 
 /** Inserta /medias-reses.svg y lo vuelve interactivo. */

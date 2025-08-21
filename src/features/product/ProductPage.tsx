@@ -9,7 +9,7 @@ export default function ProductPage() {
   const [hoveredId, setHoveredId] = React.useState<string | null>(null)
 
   return (
-    <Section title="Mercado interno">
+    <Section id="productos" title="Mercado interno">
       <div className="grid md:grid-cols-2 gap-6 items-start">
         <CutsList
           cuts={CUTS}
