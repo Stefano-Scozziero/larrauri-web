@@ -142,7 +142,7 @@ export function AppShell() {
         <div className="container-max py-1">
           <div className="flex justify-center">
             <Link to="/" className="inline-flex items-center gap-2" onClick={(e) => { e.preventDefault(); scrollToId(undefined) }}>
-              <img src={logo} alt="Larrauri" className="h-[140px] md:h-[140px] w-auto my-3" />
+              <img src={logo} alt="Larrauri" className="h-auto max-h-[150px] w-auto my-3" />
             </Link>
           </div>
 
