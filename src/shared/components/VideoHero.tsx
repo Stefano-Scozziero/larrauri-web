@@ -15,7 +15,7 @@ export function VideoHero() {
         {/* Overlay con slogan */}
         <div className="absolute inset-0 z-10 flex items-end justify-end p-4 md:p-10">
           <div className="text-right">
-            <h1 className="font-shantell text-white text-3xl md:text-5xl tracking-tight drop-shadow underline underline-offset-4">
+            <h1 className="font-medium text-white text-3xl md:text-5xl tracking-tight drop-shadow underline underline-offset-4">
   Carne Argentina
 </h1>
           </div>
