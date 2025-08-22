@@ -1,6 +1,7 @@
 import * as React from 'react'
 import feedlot from '../../assets/feedlot.jpg'
 import feedlot2 from '../../assets/feedlot2.jpg'
+
 type ChainTab = 'produccion' | 'frigorifico' | 'distribucion'
 const TABS: { id: ChainTab; label: string }[] = [
   { id: 'produccion',   label: 'Producción' },
@@ -8,8 +9,6 @@ const TABS: { id: ChainTab; label: string }[] = [
   { id: 'distribucion', label: 'Distribución' },
 ]
 
-// Ahora es Partial para poder omitir tabs sin fotos
-// Reemplazá los src por tus imágenes locales si querés (p.ej. "/assets/cadena/produccion-1.jpg")
 const GALERIA: Partial<Record<ChainTab, { src: string; alt: string }[]>> = {
   produccion: [
     { src: feedlot, alt: 'Cría y engorde en campo' },
@@ -17,14 +16,8 @@ const GALERIA: Partial<Record<ChainTab, { src: string; alt: string }[]>> = {
     { src: feedlot, alt: 'Feed lot' },
     { src: feedlot2, alt: 'Sanidad animal' },
   ],
-  // frigorifico: [
-  //   { src: 'https://images.unsplash.com/photo-1504711331083-9c895941bf81', alt: 'Planta faenadora' },
-  //   { src: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d', alt: 'Cámara de frío' },
-  //   { src: 'https://images.unsplash.com/photo-1542834369-f10ebf06d3cb', alt: 'Líneas de proceso' },
-  //   { src: 'https://images.unsplash.com/photo-1581092580491-1259e9d8a4b4', alt: 'Control de calidad' },
-  // ],
-  // // podés dejar 'distribucion' vacío o directamente no declararlo para ver el fallback
-  // distribucion: [],
+  // frigorifico: [ ... ],
+  // distribucion: [ ... ],
 }
 
 function GalleryGrid({ images }: { images: { src: string; alt: string }[] }) {
@@ -46,18 +39,20 @@ function GalleryGrid({ images }: { images: { src: string; alt: string }[] }) {
 }
 
 export function ChainValues() {
-  const [tab, setTab] = React.useState<ChainTab>('produccion')
+  // ✅ Estado inicial sin pestaña activa
+  const [tab, setTab] = React.useState<ChainTab | null>(null)
 
-  // navegación con flechas izquierda/derecha
+  // navegación con flechas izquierda/derecha (funciona sólo si hay una activa)
   const onKeyDownTabs = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (tab == null) return
     const idx = TABS.findIndex(t => t.id === tab)
     if (e.key === 'ArrowRight') setTab(TABS[(idx + 1) % TABS.length].id)
     if (e.key === 'ArrowLeft')  setTab(TABS[(idx - 1 + TABS.length) % TABS.length].id)
   }
 
-  const activeIdx = TABS.findIndex(t => t.id === tab)
-  const activeTab = TABS[activeIdx]
-  const images = GALERIA[activeTab.id] ?? [] // si no hay imágenes, cae en array vacío
+  const activeIdx = tab ? TABS.findIndex(t => t.id === tab) : -1
+  const activeTab = tab ? TABS[activeIdx] : null
+  const images = tab ? (GALERIA[tab] ?? []) : []
 
   return (
     <section id="cadena-de-valor" className="anchor-offset">
@@ -67,7 +62,6 @@ export function ChainValues() {
             CADENA DE VALOR:
           </h2>
 
-          {/* Texto actualizado */}
           <div className="space-y-4 mt-8 mx-auto max-w-5xl">
             <p className="font-medium text-brand-blue/90 text-lg md:text-xl leading-8 text-center md:text-left">
               Nuestra actividad comienza con la cría y engorde de hacienda en establecimientos propios y de terceros, los animales luego se destinan a la faena o a la comercialización en pie, de acuerdo con las demandas del mercado.
@@ -86,7 +80,7 @@ export function ChainValues() {
             </p>
           </div>
 
-          {/* Tabs + panel (abajo de todo) */}
+          {/* Tabs + panel */}
           <div className="mt-10">
             <div
               role="tablist"
@@ -94,7 +88,7 @@ export function ChainValues() {
               className="grid grid-cols-1 sm:grid-cols-3 gap-3"
               onKeyDown={onKeyDownTabs}
             >
-              {TABS.map((t) => {
+              {TABS.map((t, i) => {
                 const active = t.id === tab
                 const btnId = `tab-${t.id}`
                 const panelId = `tabpanel-${t.id}`
@@ -112,8 +106,10 @@ export function ChainValues() {
                         ? "bg-white border-brand-blue text-brand-blue shadow-sm"
                         : "bg-brand-neutral/40 border-brand-blue text-brand-blue/70 hover:bg-brand-neutral/60"
                     ].join(' ')}
+                    // ✅ Al hacer clic se activa y queda remarcado
                     onClick={() => setTab(t.id)}
-                    tabIndex={active ? 0 : -1}
+                    // ✅ Si no hay activa, dejá accesibles todas (tabIndex 0); si hay activa, sólo esa queda en 0
+                    tabIndex={tab ? (active ? 0 : -1) : 0}
                   >
                     {t.label}
                   </button>
@@ -121,23 +117,32 @@ export function ChainValues() {
               })}
             </div>
 
-            {/* Panel */}
-            <div
-              id={`tabpanel-${activeTab.id}`}
-              role="tabpanel"
-              aria-labelledby={`tab-${activeTab.id}`}
-              className="mt-6"
-            >
-              {images.length > 0 ? (
-                <GalleryGrid images={images} />
-              ) : (
-                <div className="card">
-                  <p className="text-gray-700">
-                    Contenido de <span className="font-medium">{activeTab.label}</span> próximamente.
-                  </p>
-                </div>
-              )}
-            </div>
+            {/* ✅ Panel: sólo se muestra cuando hay pestaña seleccionada */}
+            {activeTab ? (
+              <div
+                id={`tabpanel-${activeTab.id}`}
+                role="tabpanel"
+                aria-labelledby={`tab-${activeTab.id}`}
+                className="mt-6"
+              >
+                {images.length > 0 ? (
+                  <GalleryGrid images={images} />
+                ) : (
+                  <div className="card">
+                    <p className="text-gray-700">
+                      Contenido de <span className="font-medium">{activeTab.label}</span> próximamente.
+                    </p>
+                  </div>
+                )}
+              </div>
+            ) : (
+              // ✅ Mensaje inicial sin imágenes
+              <div className="mt-6 card">
+                <p className="text-gray-700">
+                  Elegí una etapa para ver las fotos.
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </div>
