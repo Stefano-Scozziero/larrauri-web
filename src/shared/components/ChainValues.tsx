@@ -58,8 +58,8 @@ export function ChainValues() {
     <section id="cadena-de-valor" className="anchor-offset">
       <div className="container-max py-12 md:py-16">
         <div className="card">
-          <h2 className="font-medium text-brand-blue text-3xl md:text-4xl underline underline-offset-4 items-start">
-            CADENA DE VALOR:
+          <h2 className="font-medium text-brand-blue text-3xl md:text-4xl items-start">
+            Cadena de valor
           </h2>
 
           <div className="space-y-4 mt-8 mx-auto max-w-5xl">

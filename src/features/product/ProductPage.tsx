@@ -7,10 +7,10 @@ import { CutsMapSvg } from './CutsMapSvg'
 
 type ProductTab = 'carnicos' | 'subproductos' | 'menudencia' | 'hacienda'
 const TABS: { id: ProductTab; label: string }[] = [
-  { id: 'carnicos',     label: 'PRODUCTOS CÁRNICOS' },
+  { id: 'carnicos', label: 'PRODUCTOS CÁRNICOS' },
   { id: 'subproductos', label: 'SUBPRODUCTOS' },
-  { id: 'menudencia',   label: 'MENUDENCIA' },
-  { id: 'hacienda',     label: 'HACIENDA' },
+  { id: 'menudencia', label: 'MENUDENCIA' },
+  { id: 'hacienda', label: 'HACIENDA' },
 ]
 
 export default function ProductPage() {
@@ -22,12 +22,14 @@ export default function ProductPage() {
   const onKeyDownTabs = (e: React.KeyboardEvent<HTMLDivElement>) => {
     const idx = TABS.findIndex(t => t.id === tab)
     if (e.key === 'ArrowRight') setTab(TABS[(idx + 1) % TABS.length].id)
-    if (e.key === 'ArrowLeft')  setTab(TABS[(idx - 1 + TABS.length) % TABS.length].id)
+    if (e.key === 'ArrowLeft') setTab(TABS[(idx - 1 + TABS.length) % TABS.length].id)
   }
 
   return (
     <Section id="productos">
-      {/* ⬇️ Tabs entre el título y los items */}
+      <h2 className="font-medium text-brand-blue text-3xl md:text-4xl items-start">
+        Nuestros productos
+      </h2>
       <div
         role="tablist"
         aria-label="Categorías de productos"

@@ -10,8 +10,8 @@ export function OurBrand() {
     >
       <div className="container-max py-12 md:py-16">
         <div className="card">
-          <h2 className="font-medium text-brand-blue text-3xl md:text-4xl underline underline-offset-4 items-start">
-            NUESTRA MARCA:
+          <h2 className="font-medium text-brand-blue text-3xl md:text-4xl items-start">
+            Nuestra marca
           </h2>
 
 
@@ -37,36 +37,25 @@ export function OurBrand() {
 
               <div className="space-y-4">
                 <p className="font-medium text-brand-blue/90 text-lg md:text-xl leading-8 text-center md:text-left">
-                  Este relato familiar comienza con la llegada de Francisco desde Bilbao a Argentina en 1910,
-                  iniciando una actividad que fue transmitiendo, casi como un legado, a las generaciones futuras.
+                  Nuestra marca es mucho más que un nombre: es el resultado de más de un siglo de trabajo, 
+                  iniciado por Francisco Larrauri tras su llegada desde Bilbao en 1910.
                 </p>
                 <p className="font-medium text-brand-blue/90 text-lg md:text-xl leading-8 text-center md:text-left">
-                  Si pensamos en una marca como algo propio, como algo que nos pertenece, resulta inevitable
-                  determinar que la mayor inspiración para desarrollar la identidad de Larrauri se encuentra y se
-                  cuenta en su historia familiar.
+                  Inspirados en ese legado familiar, desarrollamos un escudo que representa nuestra identidad. 
+                  No es solo un símbolo: es nuestra forma de honrar el trabajo de cuatro generaciones comprometidas 
+                  con la calidad, la integridad y la pasión por la carne.
+
                 </p>
                 <p className="font-medium text-brand-blue/90 text-lg md:text-xl leading-8 text-center md:text-left">
-                  La expresión “marca comercial” que conocemos hoy en día, no es más que la derivación de la marca
-                  impresa durante siglos en animales para determinar con claridad a quién pertenecían.
+                  En sus orígenes, las marcas eran grabadas en los animales para identificar la pertenencia de cada ganado. 
+                  Para los ganaderos, esos signos no eran solo marcas comerciales: eran emblemas de reputación, historia y pertenencia.
                 </p>
                 <p className="font-medium text-brand-blue/90 text-lg md:text-xl leading-8 text-center md:text-left">
-                  Como la mayoría no sabía leer, esas marcas fueron letras durante mucho tiempo; eran cruces,
-                  rayas, círculos o figuras simples en diversas combinaciones.
+                  Hoy, nuestro escudo recoge ese mismo espíritu. Toma elementos de la heráldica tradicional de Bilbao y los combina con símbolos 
+                  propios de nuestra historia ganadera, creando un emblema que representa tanto a nuestra familia como al origen mismo de nuestra actividad.
                 </p>
                 <p className="font-medium text-brand-blue/90 text-lg md:text-xl leading-8 text-center md:text-left">
-                  Para los ganaderos de entonces la marca significaba mucho más que la identidad de sus reses. Era
-                  también su reputación, su escudo de armas y su historia familiar, porque con el agregado de algún
-                  símbolo al pasar de padres a hijos, las marcas se perpetuaban de generación en generación.
-                </p>
-                <p className="font-medium text-brand-blue/90 text-lg md:text-xl leading-8 text-center md:text-left">
-                  Por lo anteriormente expresado decidimos comenzar este proceso desarrollando, no una marca
-                  ganadera, sino “un escudo familiar como elemento identitario”.
-                </p>
-                <p className="font-medium text-brand-blue/90 text-lg md:text-xl leading-8 text-center md:text-left">
-                  Basados en la heráldica, definimos como punto de partida el escudo de Bilbao.
-                </p>
-                <p className="mt-2 font-medium text-brand-blue/90 text-lg md:text-xl leading-8 text-center md:text-left">
-                  A continuación presentamos el desarrollo completo.
+                  Nuestra marca es nuestra historia, nuestra reputación y nuestro compromiso con el futuro.
                 </p>
               </div>
             </div>

@@ -10,6 +10,7 @@
   --brand-red: #e62d3f;
   --brand-neutral: #f5f5e9;
   --brand-black: #000000;
+  --header-h: 0px;
 }
 
 .container-max {
@@ -42,7 +43,7 @@
 
 /* offset universal para anclas: usa la altura real del header */
 .anchor-offset {
-  scroll-margin-top: calc(var(--header-h, 120px) + 12px);
+  scroll-margin-top: calc(var(--header-h) + 12px);
 }
 
 svg .corte {

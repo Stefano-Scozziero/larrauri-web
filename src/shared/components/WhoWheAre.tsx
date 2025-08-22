@@ -6,8 +6,8 @@ export function WhoWheAre() {
     >
       <div className="container-max py-12 md:py-16">
         <div className="card">
-          <h2 className="font-medium text-brand-blue text-3xl md:text-4xl underline underline-offset-4 items-start">
-            QUIÉNES SOMOS:
+          <h2 className="font-medium text-brand-blue text-3xl md:text-4xl items-start">
+            Quiénes somos
           </h2>
 
           <div className="space-y-4 mt-8 mx-auto max-w-5xl">
