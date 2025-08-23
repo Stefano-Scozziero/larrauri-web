@@ -1,7 +1,7 @@
 // src/shared/config/contact.ts
 export const CONTACT = {
   phone: '+54 9 341 695-3138',       // con +código país
-  email: 'administracion@finlar.com.ar',
+  email: 'administracion@larrauri.com.ar',
   waLink: '',                        // dejalo vacío o elimina la propiedad
   defaultMsg: 'Hola, me gustaría hacer una consulta desde el sitio web.',
   address: [

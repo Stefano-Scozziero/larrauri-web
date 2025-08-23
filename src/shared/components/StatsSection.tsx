@@ -21,7 +21,7 @@ const STATS: StatItem[] = [
 const fmt = new Intl.NumberFormat('es-AR')
 
 function Row({ start, item }: { start: boolean; item: StatItem }) {
-  const n = useRafCounter(item.value, { start, duration: 700 })
+  const n = useRafCounter(item.value, { start, duration: 1000 })
   const percent = start ? 100 : 0
 
   return (
@@ -58,7 +58,7 @@ function Row({ start, item }: { start: boolean; item: StatItem }) {
 
         <div className="mt-2 h-3 rounded-full bg-brand-blue/15 overflow-hidden">
           <div
-            className="h-full bg-brand-blue transition-[width] duration-700 ease-out rounded-full"
+            className="h-full bg-brand-blue transition-[width] duration-[1500ms] ease-out rounded-full"
             style={{ width: `${percent}%` }}
             aria-hidden
           />
