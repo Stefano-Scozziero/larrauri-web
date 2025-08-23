@@ -10,6 +10,7 @@ const NAV: Item[] = [
   { id: 'quienes-somos', label: 'Quiénes somos' },
   { id: 'nuestra-marca', label: 'Nuestra Marca' },
   { id: 'cadena-de-valor', label: 'Cadena de valor' },
+  { id: 'cifras', label: 'Cifras' },
   { id: 'productos', label: 'Productos' },
   { id: 'contacto', label: 'Contacto' },
 ]

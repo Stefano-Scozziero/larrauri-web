@@ -2,7 +2,7 @@
 import { VideoHero } from '../../shared/components/VideoHero'
 import { OurBrand } from '../../shared/components/OurBrand'
 import { ChainValues } from '../../shared/components/ChainValues'
-import { Section } from '../../shared/components/Section'
+import StatsSection from '../../shared/components/StatsSection'
 import { WhatsAppContact } from '../../shared/components/WhatsAppContact'
 import { WhoWheAre } from '../../shared/components/WhoWheAre'
 import { EnvImpact } from '../../shared/components/EnvImpact'
@@ -18,6 +18,8 @@ export default function HomePage() {
       <OurBrand />
 
       <ChainValues />
+
+      <StatsSection />
 
       <ProductPage />
 

@@ -177,7 +177,7 @@ export function useActiveSection(
     return () => window.removeEventListener('scroll', onScroll)
   }, [pickClosestToTop])
 
-  
+
   // Carga inicial con hash: una sola vez (cuando ya se midió headerH)
   React.useEffect(() => {
     if (didInitialHashScroll.current) return
@@ -232,7 +232,7 @@ export function useActiveSection(
       const distance = Math.abs((el.getBoundingClientRect().top - headerOffset()))
       scheduleUnlock(distance)
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hash, pathname]) // (depende indirectamente de headerH vía scroll-margin-top)
 
   // Clic de navegación en el menú (feedback inmediato + lock + smooth + hash aggiornado)
@@ -241,7 +241,6 @@ export function useActiveSection(
 
     // Inicio
     if (!id) {
-      // Mantener historial correcto
       if (location.pathname + location.hash !== '/') navigate('/', { replace: false })
       lockRef.current = true
       setActiveId('inicio')
@@ -250,26 +249,25 @@ export function useActiveSection(
       return
     }
 
-    // Actualizar hash (push si cambia, replace si es el mismo para forzar feedback visual sin duplicar historial)
-    const targetHash = `#${id}`
-    if (location.hash !== targetHash) {
-      navigate(`/${targetHash}`, { replace: false })
-    } else {
-      history.replaceState(null, '', `/${targetHash}`)
-    }
-
-    // Scroll
+    // Scroll primero (sin tocar el hash aún)
     const el = getEl(id)
     lockRef.current = true
     setActiveId(id)
-
     if (el) {
       el.scrollIntoView({ behavior: 'smooth', block: 'start' })
       const distance = Math.abs((el.getBoundingClientRect().top - headerOffset()))
       scheduleUnlock(distance)
     } else {
-      // Si no existe la sección, soltamos lock rápido para que IO / regla de "inicio" se encarguen
       scheduleUnlock(0)
+    }
+
+    // Ahora sí, actualizamos la URL sin provocar salto visible
+    const targetHash = `#${id}`
+    if (location.hash !== targetHash) {
+      // Usá pushState/replaceState directo para evitar cualquier scroll interno del router
+      history.pushState(null, '', `/${targetHash}`)
+    } else {
+      history.replaceState(null, '', `/${targetHash}`)
     }
   }, [navigate, scheduleUnlock, headerOffset])
 
