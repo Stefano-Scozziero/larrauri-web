@@ -5,12 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Larrauri</title>
 
-    <!-- Favicons -->
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg"><!-- si tienes el SVG -->
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <meta name="theme-color" content="#ffffff">
+
+    <!-- PNG por esquema de color, como fallback -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-light.png?v=2" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-dark.png?v=2"  media="(prefers-color-scheme: dark)">
+
+    <!-- Apple + manifest -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
+    <link rel="manifest" href="/site.webmanifest?v=2">
+
+    <!-- Theme color por esquema -->
+    <meta name="theme-color" content="#ffffff"  media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f2434" media="(prefers-color-scheme: dark)">
+
+    <!-- Sugerido: indica que tu sitio soporta ambos esquemas -->
+    <meta name="color-scheme" content="light dark">
   </head>
   <body class="bg-brand-neutral text-brand-black">
     <div id="root"></div>
