@@ -3,10 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Larrauri</title>
+    
+    <title>Larrauri - Carnes de Calidad</title>
 
+    <!-- SEO -->
+    <meta name="description" content="Sitio oficial de Larrauri - Especialistas en cortes de carne vacuna premium.">
+    <meta name="robots" content="index, follow">
 
-    <!-- PNG por esquema de color, como fallback -->
+    <!-- Open Graph (para compartir en redes sociales) -->
+    <meta property="og:title" content="Larrauri - Carnes de Calidad">
+    <meta property="og:description" content="Especialistas en cortes de carne vacuna premium.">
+    <meta property="og:image" content="https://larrauri-web.vercel.app/android-chrome-512x512.png">
+    <meta property="og:url" content="https://larrauri-web.vercel.app/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Larrauri - Carnes de Calidad">
+    <meta name="twitter:description" content="Especialistas en cortes de carne vacuna premium.">
+    <meta name="twitter:image" content="https://larrauri-web.vercel.app/android-chrome-512x512.png">
+
+    <!-- Favicon según esquema de color -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-light.png?v=2" media="(prefers-color-scheme: light)">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-dark.png?v=2"  media="(prefers-color-scheme: dark)">
 
@@ -15,12 +32,11 @@
     <link rel="manifest" href="/site.webmanifest?v=2">
 
     <!-- Theme color por esquema -->
-    <meta name="theme-color" content="#ffffff"  media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#0f2434" media="(prefers-color-scheme: dark)">
-
-    <!-- Sugerido: indica que tu sitio soporta ambos esquemas -->
     <meta name="color-scheme" content="light dark">
   </head>
+
   <body class="bg-brand-neutral text-brand-black">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
